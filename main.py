@@ -2,6 +2,18 @@ import random
 from bottle import route, run, template
 
 
+WORD_LISTS = {
+    'seedbed1': 'seedbed1',
+    'seedbed2': 'seedbed2',
+    'seed1': 'seed1',
+    'seed2': 'seed2',
+    'sprout1': 'sprout1',
+    'sprout2': 'sprout2',
+    'sprout3': 'sprout3',
+    'sapling1': 'sapling1',
+}
+
+
 TEMPLATE = '''
 %for item in res:
     {{item}}
@@ -9,15 +21,14 @@ TEMPLATE = '''
 %end
 '''
 
-@route('/hello/<name>')
-def index(name):
-    return template('<b>Hello {{name}}</b>!', name=name)
 
 @route('/words/<level>/<number>/')
 def get_words(level, number):
-    with open(f'words/{level}') as f:
+    the_file = f'words/{WORD_LISTS[level]}'
+    with open(the_file) as f:
         words = [line for line in f]
     words = sorted(random.sample(words, int(number)))
     return template(TEMPLATE, res=words)
+
 
 run(host='localhost', port=8080)
