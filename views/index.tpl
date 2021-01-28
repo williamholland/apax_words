@@ -2,7 +2,7 @@
 
 <h1>APAX Vocab</h1>
 
-<form action="/words/">
+<form action=".">
   <label for="level">Level:</label>
   <select id="level" name="level">
     %for level in levels:
