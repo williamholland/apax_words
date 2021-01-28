@@ -1,5 +1,5 @@
 import random
-from bottle import route, run, template
+from bottle import route, run, template, request
 
 
 WORD_LISTS = {
@@ -14,15 +14,25 @@ WORD_LISTS = {
 }
 
 
-
-
-@route('/words/<level>/<number>/')
 def get_words(level, number):
     the_file = f'words/{WORD_LISTS[level]}'
     with open(the_file) as f:
         words = [line for line in f]
     words = sorted(random.sample(words, int(number)))
     return template('list', res=words)
+
+
+@route('/words/')
+def index():
+    if request.query.level:
+        quantity = request.query.quantity
+        if quantity:
+            quantity = int(quantity)
+        else:
+            quantity = 10
+        return get_words(request.query.level, quantity)
+    else:
+        return template('index', levels=WORD_LISTS.keys())
 
 
 run(host='localhost', port=8080)

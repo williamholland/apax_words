@@ -1,4 +1,4 @@
-% include('header.tpl', title='Page Title')
+% include('header.tpl')
 %for item in res:
     {{item}}
     <br/>
