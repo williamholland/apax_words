@@ -14,12 +14,6 @@ WORD_LISTS = {
 }
 
 
-TEMPLATE = '''
-%for item in res:
-    {{item}}
-    <br/>
-%end
-'''
 
 
 @route('/words/<level>/<number>/')
@@ -28,7 +22,7 @@ def get_words(level, number):
     with open(the_file) as f:
         words = [line for line in f]
     words = sorted(random.sample(words, int(number)))
-    return template(TEMPLATE, res=words)
+    return template('list', res=words)
 
 
 run(host='localhost', port=8080)
