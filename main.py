@@ -7,6 +7,10 @@ from bottle import route, run, template, request, abort
 LEVELS = os.listdir('words')
 
 
+def make_id():
+    return uuid.uuid4().int
+
+
 def get_words(level, number):
     if level not in LEVELS:
         abort(404)
