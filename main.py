@@ -1,21 +1,16 @@
+import os
+import uuid
 import random
-from bottle import route, run, template, request
+from bottle import route, run, template, request, abort
 
 
-WORD_LISTS = {
-    'seedbed1': 'seedbed1',
-    'seedbed2': 'seedbed2',
-    'seed1': 'seed1',
-    'seed2': 'seed2',
-    'sprout1': 'sprout1',
-    'sprout2': 'sprout2',
-    'sprout3': 'sprout3',
-    'sapling1': 'sapling1',
-}
+LEVELS = os.listdir('words')
 
 
 def get_words(level, number):
-    the_file = f'words/{WORD_LISTS[level]}'
+    if level not in LEVELS:
+        abort(404)
+    the_file = os.path.join('words', level)
     with open(the_file) as f:
         words = [line for line in f]
     words = sorted(random.sample(words, int(number)))
@@ -32,7 +27,7 @@ def index():
             quantity = 10
         return get_words(request.query.level, quantity)
     else:
-        return template('index', levels=WORD_LISTS.keys())
+        return template('index', levels=LEVELS)
 
 
 run(host='localhost', port=8080)
