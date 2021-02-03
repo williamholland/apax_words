@@ -13,6 +13,7 @@
         </p>
 
         <form action="." class="mt-4">
+         <input type="hidden" id="seed" name="seed" value="get"> 
 
 
           <div class="field is-horizontal">
