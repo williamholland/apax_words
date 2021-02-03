@@ -36,6 +36,7 @@ def get_word_list_from_seed(seed):
     with open(the_file) as f:
         words = [line for line in f]
     words = get_seeded_sample(words, seed, quantity)
+    words = ''.join(words).strip()
     return template('index', words=words, levels=LEVELS, quantity=quantity, level=level)
 
 
