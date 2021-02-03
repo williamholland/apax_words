@@ -38,7 +38,7 @@
             </div>
           </div>
 
-          <input type="submit" value="Get words" class="button is-link is-large is-fullwidth">
+          <input type="submit" value="Get words" class="button is-danger is-large is-fullwidth">
 
           %if words:
             % include('list.tpl')

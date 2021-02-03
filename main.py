@@ -18,7 +18,8 @@ def get_seeded_sample(words, seed, quantity):
         return a list of size `quantity` from the `words` that will always
         return the same given the same seed
     '''
-    return ["TODO"]
+    random.seed(seed)
+    return random.sample(words, quantity)
 
 
 def get_word_list_from_seed(level, seed, quantity):
