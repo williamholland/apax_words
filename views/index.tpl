@@ -3,29 +3,36 @@
 <section class="section">
   <div class="columns is-centered is-widescreen">
     <div class="column is-half">
-    <div class="notification is-light">
+    <div class="notification card is-light">
     <div class="container px-4">
 
 
-        <p class="title">Options</p>
+        <p class="title mb-0">Vocab</p>
+        <span class="subtitle">
+          Words for hang-man, word-searches, bingo, charades or pictionary!
+        </span>
 
-        <form action=".">
+        <form action="." class="mt-4">
 
           <label class="label" for="level">Level</label>
           <span class="select mb-4">
-            <select id="level" name="level">
-              %for level in levels:
-                <option value="{{level}}">{{level}}</option>
+            <select id="level" name="level" value={{level}}>
+              %for lvl in levels:
+                <option value="{{lvl}}" {{!'selected="selected"' if level == lvl else ""}}>{{lvl}}</option>
               %end
             </select>
           </span>
 
           <label for="level" class="label">Quantity</label>
-          <input style="width: 100px;" type="number" class="input mb-4" id="quantity" name="quantity" min="1" value="10" step="1">
+          <input style="width: 100px;" type="number" class="input mb-4" id="quantity" name="quantity" min="1" value="{{quantity}}" step="1">
 
           <br>
 
           <input type="submit" value="Get words" class="button is-link is-large is-fullwidth">
+
+          %if words:
+            % include('list.tpl')
+          %end
 
         </form>
 

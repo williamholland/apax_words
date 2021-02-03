@@ -1,18 +1,8 @@
-% include('header.tpl')
-
-<div class="columns">
-  <div class="column is-2 menu">
-    % include('sidebar.tpl')
-  </div>
-
-  <div class="column">
-
-  %for item in res:
+<article class="message is-light mt-4">
+  <div class="message-body">
+    %for item in words:
       {{item}}
       <br/>
-  %end
-
+    %end
   </div>
-</div>
-
-% include('footer.tpl')
+</article>

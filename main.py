@@ -36,12 +36,21 @@ def get_word_list_from_seed(seed):
     with open(the_file) as f:
         words = [line for line in f]
     words = get_seeded_sample(words, seed, quantity)
-    return template('list', res=words, levels=LEVELS, quantity=quantity, level=level)
+    return template('index', words=words, levels=LEVELS, quantity=quantity, level=level)
 
 
 def get_homepage_form():
     ''' this will return the webpage for the search form '''
-    return template('index', levels=LEVELS)
+    quantity = request.query.quantity
+    if quantity:
+        quantity = int(quantity)
+    else:
+        quantity = 10
+    level = request.query.level
+    if level not in LEVELS:
+        level = 'seedbed2'
+    words = None
+    return template('index', words=words, levels=LEVELS, quantity=quantity, level=level)
 
 
 @route('/words/')
@@ -57,7 +66,6 @@ def index():
         redirect('.?' + params)
     else:
         # otherwise we go to the landing page
-        return template('index', levels=LEVELS)
         return get_homepage_form()
 
 

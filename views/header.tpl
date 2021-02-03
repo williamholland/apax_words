@@ -12,13 +12,13 @@
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item has-text-white title mb-0" href=".">
-      APAX Vocab
+      APAX Helper
     </a>
   </div>
 
   <span class="navbar-menu">
     <span class="navbar-item subtitle has-text-white">
-      Words for hang-man, word-searches, bingo, charades or pictionary!
+      Your digital helper for lesson planning.
     </span>
   </span>
 
