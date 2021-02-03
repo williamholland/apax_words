@@ -36,7 +36,7 @@ def get_word_list_from_seed(seed):
     with open(the_file) as f:
         words = [line for line in f]
     words = get_seeded_sample(words, seed, quantity)
-    return template('list', res=words)
+    return template('list', res=words, levels=LEVELS, quantity=quantity, level=level)
 
 
 def get_homepage_form():

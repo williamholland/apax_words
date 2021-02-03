@@ -1,17 +1,13 @@
 % include('header.tpl')
 
 <section class="section">
-  <div class="columns is-widescreen">
+  <div class="columns is-centered is-widescreen">
     <div class="column is-half">
     <div class="notification is-light">
     <div class="container px-4">
 
-      <h1 class="title has-text-danger">APAX Vocab</h1>
 
-        <p class="subtitle">
-          Words for hang-man, word-searches, bingo, charades or pictionary!
-        </p>
-
+        <p class="title">Options</p>
 
         <form action=".">
 
@@ -41,12 +37,6 @@
           a different list of words. Students should have seen all of these
           words by the end of B3. Select which level you want words from, then
           you can change how many words you want, even hundreds!
-
-        </p>
-
-        <p class="help mt-4 has-text-right">
-
-          By Will Holland.
 
         </p>
       </div>
