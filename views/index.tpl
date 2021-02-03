@@ -2,7 +2,7 @@
 
 <section class="section">
   <div class="columns is-centered is-widescreen">
-    <div class="column is-half">
+    <div class="column is-half-desktop">
     <div class="notification card is-light">
     <div class="container px-4">
 
@@ -32,7 +32,7 @@
 
               <div class="field">
                 <p class="label">Quantity</p>
-                <input style="width: 100px;" type="number" class="input mb-4" id="quantity" name="quantity" min="1" value="{{quantity}}" step="1">
+                <input type="number" class="input mb-4" id="quantity" name="quantity" min="1" value="{{quantity}}" step="1">
               </div>
 
             </div>
