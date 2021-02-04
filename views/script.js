@@ -1,5 +1,6 @@
 function copyTextArea() {
   /* Get the text field */
+
   var copyText = document.getElementById("wordListTextArea");
 
   /* Select the text field */
@@ -8,4 +9,6 @@ function copyTextArea() {
 
   /* Copy the text inside the text field */
   document.execCommand("copy");
+
+  return false;
 } 

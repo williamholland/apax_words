@@ -4,8 +4,8 @@
 
   <div class="field is-grouped is-grouped-right">
     <p class="control">
-      <button onclick="copyTextArea()" class="button is-link-inverted is-light mt-4 float-right">
-        <span class="material-icons">content_copy</span>
+      <button type="button" onclick="copyTextArea()" class="button is-link is-outlined -light mt-4 float-right">
+        <span class="material-icons">content_copy</span><span class="ml-1">copy</span>
       </button>
     </p>
   </div>
