@@ -50,10 +50,10 @@
 
           This app is designed for APAX April teachers. It will give a random
           sample of words taken from all of the lessons in a given level. The
-          words are random each time, refreshing the page will give a different
-          list of words. Students should have seen all of these words by the
-          end of B3. Select which level you want words from, then you can
-          change how many words you want, even hundreds!
+          words are random each time, press the [change] button to get a
+          different list of words. Students should have seen all of these words
+          by the end of B3. Select which level you want words from, then you
+          can change how many words you want, even hundreds!
 
         </p>
       </div>
